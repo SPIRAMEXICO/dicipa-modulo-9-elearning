@@ -19,6 +19,10 @@
   display: none;
 }
 
+.mano {
+  width: 70px;
+}
+
 .btn {
   cursor: pointer;
 }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/Animations.js"></script>
+    <script src="js/preCarga.js"></script>
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Pantalla 3</title>
+  </head>
+
+  <body>
+    <div id="contenido">
+      <img id="bg" class="element" _origeny="0" _origenx="0" src="images/bg.png" />
+      <img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla3/bg.png" />
+      <img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla3/img01.png" />
+      <img id="imagen2" class="element" _origeny="0" _origenx="0" src="images/pantalla3/img02.png" />
+      <img id="imagen3" class="element" _origeny="0" _origenx="0" src="images/pantalla3/img03.png" />
+      <img id="imagen4" class="element" _origeny="0" _origenx="0" src="images/pantalla3/img04.png" />
+      <img id="imagen5" class="element" _origeny="0" _origenx="0" src="images/pantalla3/img05.png" />
+      <img id="mano1" class="element mano" _origeny="290" _origenx="40" src="images/mano.png" />
+      <img id="mano2" class="element mano" _origeny="410" _origenx="40" src="images/mano.png" />
+      <img id="mano3" class="element mano" _origeny="540" _origenx="40" src="images/mano.png" />
+
+      <img id="btn1" class="element btn" _origeny="260" _origenx="120" src="images/pantalla3/btn01.png" />
+      <img id="btn2" class="element btn" _origeny="390" _origenx="120" src="images/pantalla3/btn02.png" />
+      <img id="btn3" class="element btn" _origeny="520" _origenx="120" src="images/pantalla3/btn03.png" />
+      <img id="pop1" class="element" _origeny="0" _origenx="0" src="images/pantalla3/popup01.png" />
+      <img id="pop2" class="element" _origeny="0" _origenx="0" src="images/pantalla3/popup02.png" />
+      <img id="cerrar" class="element btn" _origeny="100" _origenx="900" src="images/pantalla3/btn04.png" />
+
+      <!-- cargador -->
+      <img id="cargando" class="cargando" src="images/cargando.gif" />
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      //-> ANIMACIONES: // default // arriba // abajo // izq // der // zoom // alejar // speedIzq // speedDer // flip // sheker1 // sheker2 // sheker3 // sheker4
+      let F = function muestraContenido() {
+        entrada($("#bg"), "default", 0);
+        entrada($("#fondo"), "default", 0, 0);
+        entrada($("#imagen1"), "default", 0.5, 0);
+        entrada($("#imagen2"), "default", 0.5, 0.2);
+
+        parent.reproducir("3_1", 0);
+        parent.Audios["3_1"].once("end", function (e) {
+          parent.reproducir("3_2", 0);
+          entrada($("#imagen3"), "arriba", 0.5, 0);
+        });
+        parent.Audios["3_2"].once("end", function (e) {
+          parent.reproducir("3_3", 0.2);
+          entrada($("#imagen4"), "izq", 0.5, 0);
+        });
+        parent.Audios["3_3"].once("end", function (e) {
+          salida($("#imagen1"), "default", 0);
+          salida($("#imagen2"), "default", 0);
+          salida($("#imagen3"), "default", 0);
+          salida($("#imagen4"), "default", 0);
+          parent.reproducir("3_4", 0.4);
+          entrada($("#imagen5"), "default", 0.5, 0.2);
+        });
+        parent.Audios["3_4"].once("end", function (e) {
+          entrada($("#btn1"), "default", 0.5, 0);
+          entrada($("#btn2"), "default", 0.5, 0.2);
+          entrada($("#btn3"), "default", 0.5, 0.4);
+          entrada($("#mano1"), "sheker2", 0.5, 1);
+          entrada($("#mano2"), "sheker2", 0.5, 1);
+          entrada($("#mano3"), "sheker2", 0.5, 1);
+        });
+      };
+
+      function valida(btn) {
+        stop($(this), 0);
+        salida($("#mano" + btn), "default", 0);
+        parpadea($("#cerrar"), 2);
+        parent.enviarEnfrente();
+        if (btn === 2) {
+          entrada($("#pop1"), "default", 0.5, 0);
+        } else {
+          entrada($("#pop2"), "default", 0.5, 0);
+        }
+      }
+      $("#btn1")
+        .off()
+        .click(function () {
+          valida(1);
+        });
+      $("#btn2")
+        .off()
+        .click(function () {
+          valida(2);
+        });
+      $("#btn3")
+        .off()
+        .click(function () {
+          valida(3);
+        });
+      $("#cerrar")
+        .off()
+        .click(function () {
+          terminarPantalla(0);
+          parent.nextPage();
+        });
+
+      preload(document.title, F);
+    }); //ready
+  </script>
+</html>
