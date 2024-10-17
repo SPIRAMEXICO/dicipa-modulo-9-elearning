@@ -11,6 +11,7 @@
 	"scripts": {
 		"zip": "node ./scripts/creajs.js && node ./scripts/empaquetado.js",
 		"fecha": "node ./scripts/creajs.js",
+		"nombres": "node ./scripts/renameImages.js",
 		"prod": "node ./scripts/creajs.js && netlify deploy --prod -d Curso/sco",
 		"fechaDoctor": "node ./scripts/creajs.js > diagnosticoFecha.txt",
 		"prodDoctor": "node ./scripts/creajs.js && netlify deploy --prod -d Curso/sco > diagnosticoProd.txt",
