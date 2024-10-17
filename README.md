@@ -21,4 +21,4 @@ Desarrollo 17/Oct/2024
 # Screenshots
 
 ## Pantalla 1 
-<img src="scripts/Screenshot1.png" />
+<img src="scripts/111.png" />
