@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/Animations.js"></script>
+    <script src="js/preCarga.js"></script>
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Pantalla 15</title>
+  </head>
+
+  <body>
+    <div id="contenido">
+      <img id="bg" class="element" _origeny="0" _origenx="0" src="images/bg.png" />
+      <img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla15/bg.png" />
+      <img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla15/img01.png" />
+      <img id="imagen2" class="element" _origeny="0" _origenx="0" src="images/pantalla15/img02.png" />
+      <img id="imagen3" class="element" _origeny="0" _origenx="0" src="images/pantalla15/img03.png" />
+      <img id="imagen4" class="element" _origeny="0" _origenx="0" src="images/pantalla15/img04.png" />
+      <img id="imagen5" class="element" _origeny="0" _origenx="0" src="images/pantalla15/img05.png" />
+      <img id="imagen6" class="element" _origeny="0" _origenx="0" src="images/pantalla15/img06.png" />
+
+      <!-- cargador -->
+      <img id="cargando" class="cargando" src="images/cargando.gif" />
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      let F = function muestraContenido() {
+        entrada($("#bg"), "default", 0, 0);
+        entrada($("#fondo"), "default", 0.5, 0);
+        entrada($("#imagen1"), "default", 0.5, 0.2);
+        entrada($("#imagen2"), "default", 0.5, 1);
+        entrada($("#imagen3"), "default", 0.5, 2);
+        entrada($("#imagen4"), "default", 0.5, 3);
+        entrada($("#imagen5"), "default", 0.5, 4);
+        entrada($("#imagen6"), "default", 0.5, 5);
+
+        parent.reproducir("15_1", 0.3);
+        parent.Audios["15_1"].once("end", function (e) {
+          terminarPantalla();
+        });
+      };
+
+      preload(document.title, F);
+    }); //ready
+  </script>
+</html>

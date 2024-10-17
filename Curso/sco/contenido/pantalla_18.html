@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Language" content="es" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="Last-Modified" content="0" />
+		<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/preloadjs-0.6.2.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/Animations.js"></script>
+		<script src="js/preCarga.js"></script>
+		<link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+		<title>Pantalla 17</title>
+		<style>
+			.font {
+				font-family: 'Open Sans', sans-serif;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="contenido">
+			<img id="bg" class="element" _origeny="0" _origenx="0" src="images/bg.png" />
+			<img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla17/bg.png" />
+			<img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla17/Retro_bien.png" />
+			<div id="calif" class="element font" _origeny="369" _origenx="669" style="font-size: 60px; font-weight: bold; color: #fff"></div>
+			<div id="total" class="element font" _origeny="369" _origenx="900" style="font-size: 60px; font-weight: bold; color: #fff">14</div>
+			<img id="btn1" class="element btn" _origeny="600" _origenx="665" src="images/pantalla17/btn01.png" />
+
+			<!-- cargador -->
+			<img id="cargando" class="cargando" src="images/cargando.gif" />
+		</div>
+	</body>
+	<script>
+		$(document).ready(function () {
+			//-> ANIMACIONES: // default // arriba // abajo // izq // der // zoom // alejar // speedIzq // speedDer // flip // sheker1 // sheker2 // sheker3 // sheker4
+			let F = function muestraContenido() {
+				activaBotones(false);
+				const puntos = sessionStorage.getItem('puntos');
+				document.getElementById('calif').innerHTML = puntos;
+				entrada($('#bg'), 'default', 0, 0);
+				entrada($('#fondo'), 'default', 0, 0);
+				entrada($('#imagen1'), 'default', 0.5, 0);
+				entrada($('#calif'), 'zoom', 0.5, 0.4);
+				entrada($('#total'), 'zoom', 0.5, 0.6);
+				entrada($('#btn1'), 'zoom', 0.5, 0.6);
+
+				$('#btn1').click(function () {
+					parent.complete();
+					parent.save();
+					alert('Cierra la ventana para completar el curso...');
+				});
+
+				terminarPantalla();
+				localStorage.clear();
+				parent.complete();
+				parent.save();
+			};
+
+			preload(document.title, F);
+		}); //ready
+	</script>
+</html>

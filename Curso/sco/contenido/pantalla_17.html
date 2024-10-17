@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Language" content="es" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="Last-Modified" content="0" />
+		<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/preloadjs-0.6.2.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/Animations.js"></script>
+		<script src="js/preCarga.js"></script>
+		<link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+		<title>Pantalla 17</title>
+	</head>
+
+	<body>
+		<div id="contenido">
+			<img id="bg" class="element" _origeny="0" _origenx="0" src="images/bg.png" />
+			<img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla16/bg.png" />
+			<img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla16/img04.png" />
+
+			<img id="preg1" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta01.png" />
+			<img id="preg2" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta02.png" />
+			<img id="preg3" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta03.png" />
+			<img id="preg4" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta04.png" />
+			<img id="preg5" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta05.png" />
+			<img id="preg6" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta06.png" />
+			<img id="preg7" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta07.png" />
+			<img id="preg8" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta08.png" />
+			<img id="preg9" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta09.png" />
+			<img id="preg10" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta10.png" />
+			<img id="preg11" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta11.png" />
+			<img id="preg12" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta12.png" />
+			<img id="preg13" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta13.png" />
+			<img id="preg14" class="element" _origeny="0" _origenx="0" src="images/pantalla16/pregunta14.png" />
+
+			<!-- Btns 1 -->
+			<img id="btn1_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn02.png" />
+			<img id="btn1_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn03.png" />
+			<img id="btn1_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn04.png" />
+			<!-- Btns 2 -->
+			<img id="btn2_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn05.png" />
+			<img id="btn2_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn06.png" />
+			<img id="btn2_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn07.png" />
+			<!-- Btns 3 -->
+			<img id="btn3_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn08.png" />
+			<img id="btn3_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn09.png" />
+			<img id="btn3_3" opcion="3" class="element btn" _origeny="500" _origenx="140" style="width: 982px" src="images/pantalla16/btn10.png" />
+			<!-- Btns 4 -->
+			<img id="btn4_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn11.png" />
+			<img id="btn4_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn12.png" />
+			<img id="btn4_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn13.png" />
+			<!-- Btns 5 -->
+			<img id="btn5_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn14.png" />
+			<img id="btn5_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn15.png" />
+			<img id="btn5_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn16.png" />
+			<!-- Btns 6 -->
+			<img id="btn6_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn17.png" />
+			<img id="btn6_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn18.png" />
+			<img id="btn6_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn19.png" />
+			<!-- Btns 7 -->
+			<img id="btn7_1" opcion="1" class="element btn" _origeny="280" _origenx="140" style="width: 982px" src="images/pantalla16/btn20.png" />
+			<img id="btn7_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn21.png" />
+			<img id="btn7_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn22.png" />
+			<!-- Btns 8 -->
+			<img id="btn8_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn23.png" />
+			<img id="btn8_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn24.png" />
+			<img id="btn8_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn25.png" />
+			<!-- Btns 9 -->
+			<img id="btn9_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn26.png" />
+			<img id="btn9_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn27.png" />
+			<img id="btn9_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn28.png" />
+			<!-- Btns 10 -->
+			<img id="btn10_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn29.png" />
+			<img id="btn10_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn30.png" />
+			<img id="btn10_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn31.png" />
+			<!-- Btns 11 -->
+			<img id="btn11_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn32.png" />
+			<img id="btn11_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn33.png" />
+			<img id="btn11_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn34.png" />
+			<!-- Btns 12 -->
+			<img id="btn12_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn35.png" />
+			<img id="btn12_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn36.png" />
+			<img id="btn12_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn37.png" />
+			<!-- Btns 13 -->
+			<img id="btn13_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn38.png" />
+			<img id="btn13_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn39.png" />
+			<img id="btn13_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn40.png" />
+			<!-- Btns 14 -->
+			<img id="btn14_1" opcion="1" class="element btn" _origeny="280" _origenx="140" src="images/pantalla16/btn41.png" />
+			<img id="btn14_2" opcion="2" class="element btn" _origeny="390" _origenx="140" src="images/pantalla16/btn42.png" />
+			<img id="btn14_3" opcion="3" class="element btn" _origeny="500" _origenx="140" src="images/pantalla16/btn43.png" />
+
+			<!-- retros -->
+			<img id="retroBien" class="element" _origeny="0" _origenx="0" src="images/pantalla16/retro_acerto.png" />
+			<img id="retroFallo" class="element" _origeny="0" _origenx="0" src="images/pantalla16/retro_fallo.png" />
+			<img id="btnCerrar" class="element btn" _origeny="535" _origenx="714" src="images/pantalla16/btnCerrar.png" />
+
+			<!-- cargador -->
+			<img id="cargando" class="cargando" src="images/cargando.gif" />
+		</div>
+	</body>
+	<script>
+		$(document).ready(function () {
+			let F = function muestraContenido() {
+				activaBotones(false);
+				sessionStorage.clear();
+
+				entrada($('#bg'), 'default', 0, 0);
+				entrada($('#fondo'), 'default', 0.5, 0);
+				entrada($('#imagen1'), 'default', 0.5, 0.2);
+				setTimeout(function () {
+					lanzarPreguntas(pregunta);
+				}, 800);
+
+				///////////////// 🎯 Actividad Evaluación 🎯 ////////////////
+				var pregunta = 0;
+				var termino = false;
+				var puntos = 0;
+				var correctas = ['1', '3', '1', '2', '3', '1', '1', '2', '2', '1', '2', '3', '1', '3'];
+				let respuestas = ['', '', '', '', '', '', '', '', '', '', '', '', '', ''];
+
+				$('#btn1_1,#btn1_2,#btn1_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn2_1,#btn2_2,#btn2_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn3_1,#btn3_2,#btn3_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn4_1,#btn4_2,#btn4_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn5_1,#btn5_2,#btn5_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn6_1,#btn6_2,#btn6_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn7_1,#btn7_2,#btn7_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn8_1,#btn8_2,#btn8_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn9_1,#btn9_2,#btn9_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn10_1,#btn10_2,#btn10_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn11_1,#btn11_2,#btn11_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn12_1,#btn12_2,#btn12_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn13_1,#btn13_2,#btn13_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+				});
+				$('#btn14_1,#btn14_2,#btn14_3').click(function () {
+					const opcion = $(this).attr('opcion');
+					if (correctas[pregunta] === opcion) {
+						puntos++;
+						entrada($('#retroBien'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					} else {
+						entrada($('#retroFallo'), 'default', 0.5, 0.2);
+						entrada($('#btnCerrar'), 'default', 0.5, 0.2);
+					}
+					termino = true;
+				});
+
+				function validar() {
+					sessionStorage.setItem('puntos', puntos);
+					if (puntos > 7) {
+						parent.set('cmi.core.score.raw', puntos);
+						parent.nextPage();
+					} else {
+						parent.goPage(21);
+					}
+				}
+
+				function lanzarPreguntas(id) {
+					switch (id) {
+						case 0:
+							entrada($('#preg1'), 'default', 0, 0);
+							entrada($('#btn1_1'), 'default', 0, 0);
+							entrada($('#btn1_2'), 'default', 0, 0);
+							entrada($('#btn1_3'), 'default', 0, 0);
+							break;
+						case 1:
+							entrada($('#preg2'), 'default', 0, 0);
+							entrada($('#btn2_1'), 'default', 0, 0);
+							entrada($('#btn2_2'), 'default', 0, 0);
+							entrada($('#btn2_3'), 'default', 0, 0);
+							break;
+						case 2:
+							entrada($('#preg3'), 'default', 0, 0);
+							entrada($('#btn3_1'), 'default', 0, 0);
+							entrada($('#btn3_2'), 'default', 0, 0);
+							entrada($('#btn3_3'), 'default', 0, 0);
+							break;
+						case 3:
+							entrada($('#preg4'), 'default', 0, 0);
+							entrada($('#btn4_1'), 'default', 0, 0);
+							entrada($('#btn4_2'), 'default', 0, 0);
+							entrada($('#btn4_3'), 'default', 0, 0);
+							break;
+						case 4:
+							entrada($('#preg5'), 'default', 0, 0);
+							entrada($('#btn5_1'), 'default', 0, 0);
+							entrada($('#btn5_2'), 'default', 0, 0);
+							entrada($('#btn5_3'), 'default', 0, 0);
+							break;
+						case 5:
+							entrada($('#preg6'), 'default', 0, 0);
+							entrada($('#btn6_1'), 'default', 0, 0);
+							entrada($('#btn6_2'), 'default', 0, 0);
+							entrada($('#btn6_3'), 'default', 0, 0);
+							break;
+						case 6:
+							entrada($('#preg7'), 'default', 0, 0);
+							entrada($('#btn7_1'), 'default', 0, 0);
+							entrada($('#btn7_2'), 'default', 0, 0);
+							entrada($('#btn7_3'), 'default', 0, 0);
+							break;
+						case 7:
+							entrada($('#preg8'), 'default', 0, 0);
+							entrada($('#btn8_1'), 'default', 0, 0);
+							entrada($('#btn8_2'), 'default', 0, 0);
+							entrada($('#btn8_3'), 'default', 0, 0);
+							break;
+						case 8:
+							entrada($('#preg9'), 'default', 0, 0);
+							entrada($('#btn9_1'), 'default', 0, 0);
+							entrada($('#btn9_2'), 'default', 0, 0);
+							entrada($('#btn9_3'), 'default', 0, 0);
+							break;
+						case 9:
+							entrada($('#preg10'), 'default', 0, 0);
+							entrada($('#btn10_1'), 'default', 0, 0);
+							entrada($('#btn10_2'), 'default', 0, 0);
+							entrada($('#btn10_3'), 'default', 0, 0);
+							break;
+						case 10:
+							entrada($('#preg11'), 'default', 0, 0);
+							entrada($('#btn11_1'), 'default', 0, 0);
+							entrada($('#btn11_2'), 'default', 0, 0);
+							entrada($('#btn11_3'), 'default', 0, 0);
+							break;
+						case 11:
+							entrada($('#preg12'), 'default', 0, 0);
+							entrada($('#btn12_1'), 'default', 0, 0);
+							entrada($('#btn12_2'), 'default', 0, 0);
+							entrada($('#btn12_3'), 'default', 0, 0);
+							break;
+						case 12:
+							entrada($('#preg13'), 'default', 0, 0);
+							entrada($('#btn13_1'), 'default', 0, 0);
+							entrada($('#btn13_2'), 'default', 0, 0);
+							entrada($('#btn13_3'), 'default', 0, 0);
+							break;
+						case 13:
+							entrada($('#preg14'), 'default', 0, 0);
+							entrada($('#btn14_1'), 'default', 0, 0);
+							entrada($('#btn14_2'), 'default', 0, 0);
+							entrada($('#btn14_3'), 'default', 0, 0);
+							break;
+
+						default:
+							break;
+					}
+				}
+
+				function limpiar() {
+					for (let index = 1; index < 31; index++) {
+						salida($('#preg' + index), 'default', 0, 0);
+						salida($('#btn1_' + index), 'default', 0, 0);
+						salida($('#btn2_' + index), 'default', 0, 0);
+						salida($('#btn3_' + index), 'default', 0, 0);
+					}
+				}
+
+				$('#btnCerrar').click(function () {
+					salida($('#btnCerrar'), 'default', 0, 0);
+					salida($('#retroBien'), 'default', 0, 0);
+					salida($('#retroFallo'), 'default', 0, 0);
+					console.log('pregunta: ' + pregunta);
+					console.log('puntos: ' + puntos);
+					if (termino === false) {
+						pregunta++;
+						lanzarPreguntas(pregunta);
+					} else {
+						validar();
+					}
+				});
+				// function actividad() {
+				//   console.log("%c R: " + correctas[preguntaActual], "font-size: 100%; color: #fff200; font-weight: 700;");
+				//   entrada($("#preg" + preguntaActual), "default", 0.5, 0);
+				//   for (let opciones = 0; opciones <= 3; opciones++) {
+				//     entrada($("#btn" + preguntaActual + "_" + opciones), "default", 0.2, 0.2);
+				//   }
+				//   for (let i = 0; i <= noObjetos; i++) {
+				//     $("#btn" + preguntaActual + "_" + i).click(function () {
+				//       var cualBoton = parseInt($(this).attr("id").substr(5, 2));
+				//       var cualBotonDosDigitos = parseInt($(this).attr("id").substr(6, 2));
+				//       if (preguntaActual >= 10) {
+				//         respuestas.push(cualBotonDosDigitos);
+				//       } else {
+				//         respuestas.push(cualBoton);
+				//       }
+				//       limpia();
+				//       califica();
+				//     });
+				//   }
+				// }
+				// function limpia() {
+				//   for (b = 0; b <= noObjetos; b++) {
+				//     salida($("#preg" + b), "default", 0);
+				//     for (let opciones = 0; opciones <= 3; opciones++) {
+				//       salida($("#btn" + preguntaActual + "_" + opciones), "default", 0.2, 0.2);
+				//     }
+				//   }
+				// }
+				// function califica() {
+				//   if (respuestas[preguntaActual] === correctas[preguntaActual]) {
+				//     calificacion++;
+				//   }
+				//   if (preguntaActual === noObjetos) {
+				// var promedio = calificacion * 10 / 14;
+				// console.log("Promedio ---- " + promedio);
+
+				// let promedioRedondeado = parseFloat(promedio.toFixed(1));
+				//     console.log("%c Prom " + promedioRedondeado, "font-size: 100%; color: #00AEFF; font-weight: 700;");
+				//     parent.set("cmi.core.score.raw", promedioRedondeado);
+				//     console.log("Promedio ---- " + promedioRedondeado);
+				//     if (promedioRedondeado >= minima) {
+				//       parent.nextPage();
+				//     } else {
+				//       parent.goPage(21);
+				//     }
+				//   } else {
+				//     preguntaActual++;
+				//     actividad();
+				//   }
+				//   $("#cerrar").click(function () {
+				//     stop($(this), 0);
+				//     if (calificacion >= minima) {
+				//       parent.nextPage();
+				//     } else {
+				//       parent.reLoad();
+				//     }
+				//   });
+			};
+
+			preload(document.title, F);
+		}); //ready
+	</script>
+</html>

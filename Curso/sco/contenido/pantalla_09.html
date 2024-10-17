@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/Animations.js"></script>
+    <script src="js/preCarga.js"></script>
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Pantalla 10</title>
+  </head>
+
+  <body>
+    <div id="contenido">
+      <img id="bg" class="element" _origeny="0" _origenx="0" src="images/bg.png" />
+      <img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla9/bg.png" />
+      <img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla9/img01.png" />
+      <img id="imagen2" class="element" _origeny="0" _origenx="0" src="images/pantalla9/img02.png" />
+      <img id="imagen3" class="element" _origeny="0" _origenx="0" src="images/pantalla9/img03.png" />
+      <img id="imagen4" class="element" _origeny="0" _origenx="0" src="images/pantalla9/img04.png" />
+      <img id="imagen5" class="element" _origeny="0" _origenx="0" src="images/pantalla9/img05.png" />
+      <img id="imagen6" class="element" _origeny="0" _origenx="0" src="images/pantalla9/img06.png" />
+      <img id="imagen7" class="element" _origeny="0" _origenx="0" src="images/pantalla9/img07.png" />
+      <img id="imagen8" class="element" _origeny="0" _origenx="0" src="images/pantalla9/img08.png" />
+      <img id="atras" class="element btn" _origeny="515" _origenx="130" src="images/pantalla9/atras.png" />
+      <img id="siguiente" class="element btn" _origeny="515" _origenx="1080" src="images/pantalla9/sig.png" />
+
+      <!-- cargador -->
+      <img id="cargando" class="cargando" src="images/cargando.gif" />
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      let F = function muestraContenido() {
+        let slider = 0;
+        entrada($("#bg"), "default", 0, 0);
+        entrada($("#fondo"), "default", 0.5, 0);
+        entrada($("#imagen1"), "default", 0.5, 0.2);
+        entrada($("#imagen2"), "default", 0.5, 0.2);
+        entrada($("#imagen3"), "zoom", 0.5, 0.4);
+        parent.reproducir("9_1", 0.6);
+
+        parent.Audios["9_1"].once("end", function (e) {
+          salida($("#imagen2"), "default", 0, 0);
+          salida($("#imagen3"), "default", 0, 0);
+          entrada($("#imagen4"), "izq", 0.5, 0.2);
+          entrada($("#imagen5"), "der", 0.5, 0.2);
+          parent.reproducir("9_2", 0.4);
+        });
+        parent.Audios["9_2"].once("end", function (e) {
+          salida($("#imagen4"), "default", 0, 0);
+          salida($("#imagen5"), "default", 0, 0);
+          entrada($("#imagen6"), "arriba", 0.5, 0.2);
+          parent.reproducir("9_3", 0.4);
+        });
+        parent.Audios["9_3"].once("end", function (e) {
+          lanzarSlider(slider);
+          parpadea($("#siguiente"), 0.5);
+        });
+
+        $("#atras").click(function () {
+          slider--;
+          lanzarSlider(slider);
+        });
+        $("#siguiente").click(function () {
+          slider++;
+          stop($(this), 0);
+          lanzarSlider(slider);
+        });
+
+        function lanzarSlider(id) {
+          switch (id) {
+            case 0:
+              salida($("#atras"), "default", 0, 0);
+              salida($("#imagen8"), "default", 0, 0);
+              entrada($("#imagen7"), "default", 0.5, 0.2);
+              break;
+            case 1:
+              entrada($("#atras"), "default", 0.5, 0.2);
+              salida($("#imagen7"), "default", 0, 0);
+              entrada($("#imagen8"), "default", 0.5, 0.2);
+              salida($("#siguiente"), "default", 0, 0);
+              terminarPantalla();
+              break;
+            case 2:
+
+            default:
+              break;
+          }
+        }
+      };
+
+      preload(document.title, F);
+    }); //ready
+  </script>
+</html>

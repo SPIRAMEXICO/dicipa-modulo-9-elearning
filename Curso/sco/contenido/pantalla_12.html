@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/Animations.js"></script>
+    <script src="js/preCarga.js"></script>
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Pantalla 12</title>
+  </head>
+
+  <body>
+    <div id="contenido">
+      <img id="bg" class="element" _origeny="0" _origenx="0" src="images/bg.png" />
+      <img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla12/bg.png" />
+      <img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla12/img01.png" />
+      <img id="imagen2" class="element" _origeny="0" _origenx="0" src="images/pantalla12/img02.png" />
+      <img id="imagen3" class="element" _origeny="0" _origenx="0" src="images/pantalla12/img03.png" />
+
+      <img id="btn1" class="element btn" _origeny="280" _origenx="160" src="images/pantalla12/btn01.png" />
+      <img id="btn2" class="element btn" _origeny="280" _origenx="670" src="images/pantalla12/btn02.png" />
+
+      <img id="pop1" class="element" _origeny="0" _origenx="0" src="images/pantalla12/info01.png" />
+      <img id="pop2" class="element" _origeny="0" _origenx="0" src="images/pantalla12/info02.png" />
+
+      <div id="cerrar" class="element btn" _origeny="106" _origenx="888" style="width: 80px; height: 80px"></div>
+
+      <!-- cargador -->
+      <img id="cargando" class="cargando" src="images/cargando.gif" />
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      let F = function muestraContenido() {
+        entrada($("#bg"), "default", 0, 0);
+        entrada($("#fondo"), "default", 0, 0);
+        entrada($("#imagen1"), "default", 0, 0);
+        entrada($("#imagen2"), "arriba", 0.5, 0.4);
+
+        parent.reproducir("12_1", 0.6);
+        parent.Audios["12_1"].once("end", function (e) {
+          entrada($("#imagen3"), "default", 0.5, 0.2);
+          parpadea($("#btn1"), 0.4);
+          parpadea($("#btn2"), 0.6);
+        });
+      };
+
+      ///////////////// 🎯 Actividad Botonera 🎯 ////////////////
+      var noObjetos = 2;
+      var pulsados = [];
+      function limpia() {
+        for (b = 0; b <= noObjetos; b++) {
+          salida($("#pop" + b), "default", 0);
+          salida($("#cerrar"), "default", 0);
+        }
+      }
+      function play(A, B) {
+        parent.reproducir(A, 0.4);
+        parent.Audios[A].once("end", function (e) {
+          parent.reproducir(B, 0.4);
+        });
+        parent.Audios[B].once("end", function (e) {
+          entrada($("#cerrar"), "default", 0.5, 0);
+        });
+      }
+      for (let i = 0; i <= noObjetos; i++) {
+        $("#btn" + i)
+          .off()
+          .click(function () {
+            var cualBoton = parseInt($(this).attr("id").substr(3, 2));
+            if (!pulsados.includes(cualBoton)) {
+              pulsados.push(cualBoton);
+            }
+            stop($(this), 0);
+            entrada($("#pop" + cualBoton), "default", 0.5, 0);
+            parent.enviarEnfrente();
+            switch (cualBoton) {
+              case 1:
+                play("12_2", "12_3");
+                break;
+              case 2:
+                play("12_4", "12_5");
+                break;
+            }
+          });
+      }
+      function watch() {
+        console.log(pulsados);
+        if (pulsados.length === noObjetos) {
+          terminarPantalla();
+        }
+      }
+      $("#cerrar")
+        .off()
+        .click(function () {
+          parent.enviarAtras();
+          limpia();
+          watch();
+        });
+
+      preload(document.title, F);
+    }); //ready
+  </script>
+</html>

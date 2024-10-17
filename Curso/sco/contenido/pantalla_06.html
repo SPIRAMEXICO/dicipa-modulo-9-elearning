@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Language" content="es" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="Last-Modified" content="0" />
+		<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/preloadjs-0.6.2.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/Animations.js"></script>
+		<script src="js/preCarga.js"></script>
+		<link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+		<title>Pantalla 8</title>
+	</head>
+
+	<body>
+		<div id="contenido">
+			<img id="bg" class="element" _origeny="0" _origenx="0" src="images/bg.png" />
+			<img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla6/bg.png" />
+			<img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla6/img01.png" />
+			<img id="imagen2" class="element" _origeny="0" _origenx="0" src="images/pantalla6/img02.png" />
+			<img id="imagen3" class="element" _origeny="0" _origenx="0" src="images/pantalla6/img03.png" />
+			<img id="imagen4" class="element" _origeny="0" _origenx="0" src="images/pantalla6/img04.png" />
+			<img id="btn1" class="element btn" _origeny="416" _origenx="300" src="images/pantalla6/btn01.png" />
+			<img id="btn2" class="element btn" _origeny="416" _origenx="532" src="images/pantalla6/btn02.png" />
+			<img id="btn3" class="element btn" _origeny="416" _origenx="762" src="images/pantalla6/btn03.png" />
+			<img id="popup1" class="element" _origeny="0" _origenx="0" src="images/pantalla6/pop01.png" />
+			<img id="popup2" class="element" _origeny="0" _origenx="0" src="images/pantalla6/pop02.png" />
+			<img id="popup3" class="element" _origeny="0" _origenx="0" src="images/pantalla6/pop03.png" />
+			<img id="cerrar" class="element btn" _origeny="205" _origenx="984" src="images/pantalla6B/btn03.png" />
+
+			<!-- cargador -->
+			<img id="cargando" class="cargando" src="images/cargando.gif" />
+		</div>
+	</body>
+	<script>
+		$(document).ready(function () {
+			let F = function muestraContenido() {
+				entrada($('#bg'), 'default', 0, 0);
+				entrada($('#fondo'), 'default', 0.5, 0);
+				entrada($('#imagen1'), 'default', 0.5, 0);
+				entrada($('#imagen2'), 'arriba', 0.5, 0.2);
+				parent.reproducir('6_1', 0.4);
+
+				parent.Audios['6_1'].once('end', function (e) {
+					entrada($('#imagen3'), 'zoom', 0.5, 0.2);
+					entrada($('#imagen4'), 'default', 0.5, 0.2);
+					parpadea($('#btn1'), 0);
+					parpadea($('#btn2'), 0);
+					parpadea($('#btn3'), 0);
+				});
+
+				$('#btn1').click(function () {
+					stop($(this), 0);
+					parent.enviarEnfrente();
+					entrada($('#popup1'), 'default', 0.5, 0.2);
+
+					parent.reproducir('6_2', 0.4);
+					parent.Audios['6_2'].once('end', function (e) {
+						parent.reproducir('6_5', 0.4);
+					});
+					parent.Audios['6_5'].once('end', function (e) {
+						parpadea($('#cerrar'), 0);
+					});
+				});
+
+				$('#btn2').click(function () {
+					stop($(this), 0);
+					parent.enviarEnfrente();
+					entrada($('#popup2'), 'default', 0.5, 0.2);
+
+					parent.reproducir('6_3', 0.4);
+					parent.Audios['6_3'].once('end', function (e) {
+						parent.reproducir('6_6', 0.4);
+					});
+					parent.Audios['6_6'].once('end', function (e) {
+						parpadea($('#cerrar'), 0);
+					});
+				});
+
+				$('#btn3').click(function () {
+					stop($(this), 0);
+					parent.enviarEnfrente();
+					entrada($('#popup3'), 'default', 0.5, 0.2);
+
+					parent.reproducir('6_4', 0.4);
+					parent.Audios['6_4'].once('end', function (e) {
+						parent.reproducir('6_7', 0.4);
+					});
+					parent.Audios['6_7'].once('end', function (e) {
+						parpadea($('#cerrar'), 0);
+					});
+				});
+
+				$('#cerrar').click(function () {
+					parent.audioStop();
+					parent.enviarAtras();
+					salida($('#cerrar'), 'default', 0, 0);
+					salida($('#popup1'), 'default', 0, 0);
+					salida($('#popup2'), 'default', 0, 0);
+					salida($('#popup3'), 'default', 0, 0);
+				});
+				parent.Audios['6_7'].once('end', function (e) {
+					terminarPantalla();
+				});
+			};
+
+			preload(document.title, F);
+		}); //ready
+	</script>
+</html>
