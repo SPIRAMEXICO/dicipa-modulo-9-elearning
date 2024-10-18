@@ -22,6 +22,10 @@
   width: 70px;
 }
 
+#logo {
+  width: 770px;
+}
+
 .btn {
   cursor: pointer;
 }
