@@ -12,6 +12,7 @@ course.pages = [
 	{ title: 'Pantalla_03', url: 'pantalla_03.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_04', url: 'pantalla_04.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_05', url: 'pantalla_05.html', navegacion: true, menu: true },
+	{ title: 'Pantalla_05b', url: 'pantalla_05b.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_06', url: 'pantalla_06.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_07', url: 'pantalla_07.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_08', url: 'pantalla_08.html', navegacion: true, menu: true },
@@ -80,6 +81,7 @@ Audios['6_7'] = new Howl({ src: './contenido/audios/P6_07.mp3' });
 //Pantalla 7
 Audios['7_1'] = new Howl({ src: './contenido/audios/P7_01.mp3' });
 Audios['7_2'] = new Howl({ src: './contenido/audios/P7_02.mp3' });
+Audios['7_3'] = new Howl({ src: './contenido/audios/P7_03.mp3' });
 
 //Pantalla 8
 Audios['8_1'] = new Howl({ src: './contenido/audios/P8_01.mp3' });
