@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/Animations.js"></script>
+    <script src="js/preCarga.js"></script>
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Pantalla 18</title>
+  </head>
+
+  <body>
+    <div id="contenido">
+      <img id="bg" class="element" _origeny="0" _origenx="0" src="images/bg.png" />
+      <img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla18/bg.png" />
+      <img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla18/img01.png" />
+      <img id="imagen2" class="element" _origeny="0" _origenx="0" src="images/pantalla18/img02.png" />
+      <img id="imagen3" class="element" _origeny="0" _origenx="0" src="images/pantalla18/img03.png" />
+      <img id="logo" class="element" _origeny="0" _origenx="0" src="images/logo.png" style="width: 770px" />
+
+      <img id="mano1" class="element mano" _origeny="570" _origenx="240" src="images/mano2.png" />
+      <img id="mano2" class="element mano" _origeny="570" _origenx="430" src="images/mano2.png" />
+      <img id="mano3" class="element mano" _origeny="570" _origenx="660" src="images/mano2.png" />
+
+      <img id="btn1" class="element btn" _origeny="400" _origenx="200" src="images/pantalla18/btn01.png" />
+      <img id="btn2" class="element btn" _origeny="415" _origenx="390" src="images/pantalla18/btn02.png" />
+      <img id="btn3" class="element gris" _origeny="430" _origenx="610" src="images/pantalla18/btn03.png" />
+
+      <!-- cargador -->
+      <img id="cargando" class="cargando" src="images/cargando.gif" />
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      //-> ANIMACIONES: // default // arriba // abajo // izq // der // zoom // alejar // speedIzq // speedDer // flip // sheker1 ←..→ // sheker2 ↩︎ // sheker3 ↑..↓ // sheker4 ←→
+      let F = function muestraContenido() {
+        entrada($("#bg"), "default", 0);
+        entrada($("#fondo"), "default", 0, 0);
+        entrada($("#logo"), "default", 0, 0);
+        entrada($("#imagen1"), "default", 0.5, 0);
+
+        parent.reproducir("18_1", 0.2);
+        parent.Audios["18_1"].once("end", function (e) {
+          parent.reproducir("18_2", 0.2);
+          entrada($("#imagen3"), "default", 0.5, 11);
+        });
+        parent.Audios["18_2"].once("end", function (e) {
+          entrada($("#imagen2"), "default", 0.5, 0);
+          entrada($("#btn1"), "default", 0.5, 0.2);
+          entrada($("#btn2"), "default", 0.5, 0.2);
+          entrada($("#btn3"), "default", 0.5, 0.2);
+
+          //   entrada($("#mano1"), "sheker2", 0.5, 0.2);
+          entrada($("#mano2"), "sheker2", 0.5, 0.2);
+          //   entrada($("#mano3"), "sheker2", 0.5, 0.2);
+        });
+      };
+
+      $("#btn1")
+        .off()
+        .click(function () {
+          parent.goPage(19);
+        });
+      $("#btn2")
+        .off()
+        .click(function () {
+          parent.goPage(21);
+        });
+    //   $("#btn3")
+    //     .off()
+    //     .click(function () {
+    //       parent.goPage(21);
+    //     });
+
+      preload(document.title, F);
+    }); //ready
+  </script>
+</html>

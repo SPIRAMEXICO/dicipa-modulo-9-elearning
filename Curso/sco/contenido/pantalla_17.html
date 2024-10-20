@@ -23,6 +23,7 @@
       <img id="bg" class="element" _origeny="0" _origenx="0" src="images/bg.png" />
       <img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla17/bg.png" />
       <img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla17/img01.png" />
+      <img id="logo" class="element" _origeny="0" _origenx="0" src="images/logo.png" />
       <img id="imagen2" class="element" _origeny="0" _origenx="0" src="images/pantalla17/img02.png" />
       <img id="imagen3" class="element" _origeny="0" _origenx="0" src="images/pantalla17/img03.png" />
       <img id="imagen4" class="element" _origeny="0" _origenx="0" src="images/pantalla17/img04.png" />
@@ -37,18 +38,34 @@
   </body>
   <script>
     $(document).ready(function () {
-    //-> ANIMACIONES: // default // arriba // abajo // izq // der // zoom // alejar // speedIzq // speedDer // flip // sheker1 ←..→ // sheker2 ↩︎ // sheker3 ↑..↓ // sheker4 ←→ 
+      //-> ANIMACIONES: // default // arriba // abajo // izq // der // zoom // alejar // speedIzq // speedDer // flip // sheker1 ←..→ // sheker2 ↩︎ // sheker3 ↑..↓ // sheker4 ←→
       let F = function muestraContenido() {
         entrada($("#bg"), "default", 0);
         entrada($("#fondo"), "default", 0, 0);
+        entrada($("#logo"), "default", 0, 0);
         entrada($("#imagen1"), "default", 0.5, 0);
-        entrada($("#imagen2"), "default", 0.5, 0.2);
 
         parent.reproducir("17_1", 0.2);
         parent.Audios["17_1"].once("end", function (e) {
-          parent.reproducir("17_2", 0);
+          parent.reproducir("17_2", 0.2);
+          entrada($("#imagen2"), "default", 0.5, 0);
         });
-      }
+        parent.Audios["17_2"].once("end", function (e) {
+          parent.reproducir("17_3", 0.6);
+          entrada($("#imagen3"), "default", 0.5, 0);
+          entrada($("#imagen4"), "zoom", 0.5, 0.2);
+          entrada($("#imagen5"), "arriba", 0.5, 0.4);
+        });
+        parent.Audios["17_3"].once("end", function (e) {
+          parent.reproducir("17_4", 0);
+          salida($("#imagen5"), "default", 0);
+          entrada($("#imagen7"), "default", 0.5, 0);
+          entrada($("#imagen8"), "abajo", 0.5, 0.2);
+        });
+        parent.Audios["17_4"].once("end", function (e) {
+          terminarPantalla(0);
+        });
+      };
 
       preload(document.title, F);
     }); //ready
