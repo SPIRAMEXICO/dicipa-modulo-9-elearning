@@ -17,7 +17,7 @@
     <script src="js/Animations.js"></script>
     <script src="js/preCarga.js"></script>
     <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
-    <title>Pantalla 23</title>
+    <title>Pantalla 23b</title>
   </head>
 
   <body>
@@ -35,19 +35,22 @@
       <img id="dropF1" class="element" _origeny="0" _origenx="0" src="images/pantalla23/drop.png" />
       <img id="dropF2" class="element" _origeny="0" _origenx="0" src="images/pantalla23/drop02.png" />
       <img id="dropF3" class="element" _origeny="0" _origenx="0" src="images/pantalla23/drop03.png" />
-      <div id="drop1" class="element drop" _origeny="270" _origenx="90" style="width: 155px; height: 160px"></div>
-      <div id="drop2" class="element drop" _origeny="270" _origenx="300" style="width: 155px; height: 160px"></div>
-      <div id="drop3" class="element drop" _origeny="270" _origenx="510" style="width: 155px; height: 160px"></div>
-      <div id="drop4" class="element drop" _origeny="270" _origenx="720" style="width: 155px; height: 160px"></div>
-      <div id="drop5" class="element drop" _origeny="287" _origenx="940" style="width: 245px; height: 160px"></div>
+      <div id="drop1" class="element drop" _origeny="220" _origenx="306" style="width: 155px; height: 160px"></div>
+      <div id="drop2" class="element drop" _origeny="220" _origenx="517" style="width: 155px; height: 160px"></div>
+      <div id="drop3" class="element drop" _origeny="240" _origenx="737" style="width: 235px; height: 115px"></div>
 
-      <img id="pieza1" class="element drag" _origeny="570" _origenx="315" src="images/pantalla23/drag01.png" />
-      <img id="pieza2" class="element drag" _origeny="640" _origenx="830" src="images/pantalla23/drag02.png" />
-      <img id="pieza3" class="element drag" _origeny="530" _origenx="55" src="images/pantalla23/drag03.png" />
-      <img id="pieza4" class="element drag" _origeny="590" _origenx="650" src="images/pantalla23/drag04.png" />
-      <img id="pieza5" class="element drag" _origeny="660" _origenx="460" src="images/pantalla23/drag05.png" />
-      <img id="pieza6" class="element drag" _origeny="530" _origenx="1120" src="images/pantalla23/drag06.png" />
-      <img id="pieza7" class="element drag" _origeny="530" _origenx="960" src="images/pantalla23/drag07.png" />
+      <div id="drop4" class="element drop" _origeny="390" _origenx="200" style="width: 155px; height: 160px"></div>
+      <div id="drop5" class="element drop" _origeny="390" _origenx="412" style="width: 155px; height: 160px"></div>
+      <div id="drop6" class="element drop" _origeny="390" _origenx="623" style="width: 155px; height: 160px"></div>
+      <div id="drop7" class="element drop" _origeny="410" _origenx="843" style="width: 235px; height: 115px"></div>
+
+      <img id="pieza8" class="element drag" _origeny="640" _origenx="580" src="images/pantalla23/drag08.png" />
+      <img id="pieza9" class="element drag" _origeny="650" _origenx="240" src="images/pantalla23/drag09.png" />
+      <img id="pieza10" class="element drag" _origeny="620" _origenx="910" src="images/pantalla23/drag10.png" />
+      <img id="pieza11" class="element drag" _origeny="590" _origenx="470" src="images/pantalla23/drag11.png" />
+      <img id="pieza12" class="element drag" _origeny="590" _origenx="060" src="images/pantalla23/drag12.png" />
+      <img id="pieza13" class="element drag" _origeny="600" _origenx="740" src="images/pantalla23/drag13.png" />
+      <img id="pieza14" class="element drag" _origeny="580" _origenx="1020" src="images/pantalla23/drag14.png" />
 
       <img id="retroBien" class="element" _origeny="0" _origenx="0" src="images/pantalla23/retro_positiva.png" />
       <img id="retroBien2" class="element" _origeny="0" _origenx="0" src="images/pantalla23/retro_positiva02.png" />
@@ -63,26 +66,28 @@
       let F = function muestraContenido() {
         entrada($("#bg"), "default", 0);
         entrada($("#fondo"), "default", 0, 0);
-        entrada($("#imagen1"), "default", 0.5, 0);
-        entrada($("#imagen2"), "default", 0.5, 0.2);
-        entrada($("#imagen3"), "default", 0.5, 2);
+        entrada($("#imagen5"), "default", 0.5, 0);
+        entrada($("#imagen6"), "default", 0.5, 2);
 
-        parent.reproducir("23_1", 0.2);
-        parent.Audios["23_1"].once("end", function (e) {
-          entrada($("#dropF1"), "default", 0.5, 0);
-          entrada($("#imagen4"), "default", 0.5, 0);
+        parent.reproducir("23_2", 0.2);
+        parent.Audios["23_2"].once("end", function (e) {
+          entrada($("#dropF2"), "default", 0.5, 0);
+          entrada($("#dropF3"), "default", 0.5, 0);
+          entrada($("#imagen7"), "default", 0.5, 0);
           entrada($("#drop1"), "default", 0.5, 0);
           entrada($("#drop2"), "default", 0.5, 0);
           entrada($("#drop3"), "default", 0.5, 0);
           entrada($("#drop4"), "default", 0.5, 0);
           entrada($("#drop5"), "default", 0.5, 0);
-          entrada($("#pieza1"), "speedIzq", 0.5, 0.2);
-          entrada($("#pieza2"), "speedIzq", 0.5, 0.4);
-          entrada($("#pieza3"), "speedIzq", 0.5, 0.6);
-          entrada($("#pieza4"), "speedIzq", 0.5, 0.8);
-          entrada($("#pieza5"), "speedIzq", 0.5, 1);
-          entrada($("#pieza6"), "speedIzq", 0.5, 1.2);
-          entrada($("#pieza7"), "speedIzq", 0.5, 1.4);
+          entrada($("#drop6"), "default", 0.5, 0);
+          entrada($("#drop7"), "default", 0.5, 0);
+          entrada($("#pieza8"), "speedIzq", 0.5, 0.2);
+          entrada($("#pieza9"), "speedIzq", 0.5, 0.4);
+          entrada($("#pieza10"), "speedIzq", 0.5, 0.6);
+          entrada($("#pieza11"), "speedIzq", 0.5, 0.8);
+          entrada($("#pieza12"), "speedIzq", 0.5, 1);
+          entrada($("#pieza13"), "speedIzq", 0.5, 1.2);
+          entrada($("#pieza14"), "speedIzq", 0.5, 1.4);
         });
       };
 
@@ -113,6 +118,26 @@
       ///////////////// ⭐️ Anima las piezas ⭐️ ////////////////
       $(".drag").mouseup(function () {
         dragActivo = parseInt($(this).attr("id").substr(5, 2));
+      });
+      ///////////////// ⭐️ Función para copiar al portapapeles ⭐️ ////////////////
+      function copiarAlPortapapeles(texto) {
+        // Crear un elemento temporal para seleccionar el texto
+        var tempElement = $("<textarea>");
+        $("body").append(tempElement);
+        tempElement.val(texto).select();
+        document.execCommand("copy");
+        tempElement.remove();
+        console.log("Texto copiado al portapapeles: " + texto);
+      }
+      $(".drag").click(function () {
+        // Obtener las coordenadas top y left de la pieza
+        var top = $(this).css("top").replace("px", "");
+        var left = $(this).css("left").replace("px", "");
+        // Formatear el texto con el formato requerido
+        var textoCoordenadas = `_origeny="${top}" _origenx="${left}"`;
+
+        // Copiar al portapapeles
+        copiarAlPortapapeles(textoCoordenadas);
       });
 
       ///////////////// ⭐️ Anima las piezas ⭐️ ////////////////

@@ -31,6 +31,7 @@ course.pages = [
 	{ title: 'Pantalla_21', url: 'pantalla_21.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_22', url: 'pantalla_22.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_23', url: 'pantalla_23.html', navegacion: true, menu: true },
+	{ title: 'Pantalla_23b', url: 'pantalla_23b.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_24', url: 'pantalla_24.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_25', url: 'pantalla_25.html', navegacion: true, menu: true },
 	{ title: 'Pantalla_26', url: 'pantalla_26.html', navegacion: true, menu: true },
