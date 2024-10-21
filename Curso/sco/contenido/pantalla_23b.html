@@ -92,8 +92,10 @@
       };
 
       ///////////////// ⭐️ Variables Actividad ⭐️ ////////////////
-      var respuestas = [null, 1, 6, 4, 7, 3]; // Correctas
-      var seleccionadas = [null, 0, 0, 0, 0, 0]; // Los drops y sus piezas finales
+      var respuestas1 = [null, 8, 10, 14]; // Correctas
+      var respuestas2 = [null, null, null, null, 11, 12, 13, 9]; // Correctas
+      var seleccionadas1 = [null, 0, 0, 0]; // Los drops y sus piezas finales
+      var seleccionadas2 = [null, null, null, null, 0, 0, 0, 0]; // Los drops y sus piezas finales
       var aprobado = false;
       var dropActivo = 0;
       var dragActivo = 0;
@@ -104,24 +106,25 @@
         cursor: "grabbing",
         revert: "invalid", // cuando no haga drop, el elemento volverá a su posición inicial
       });
+
       $(".drop").droppable({
         tolerance: "intersect",
         accept: ".drag",
         drop: function () {
-          // $("#pieza" + dragActivo).draggable("destroy");
           dropActivo = parseInt($(this).attr("id").substr(4, 2));
           console.log("Drop " + dropActivo);
           console.log("Drag " + dragActivo);
           checkMatch();
         },
       });
+
       ///////////////// ⭐️ Anima las piezas ⭐️ ////////////////
       $(".drag").mouseup(function () {
         dragActivo = parseInt($(this).attr("id").substr(5, 2));
       });
+
       ///////////////// ⭐️ Función para copiar al portapapeles ⭐️ ////////////////
       function copiarAlPortapapeles(texto) {
-        // Crear un elemento temporal para seleccionar el texto
         var tempElement = $("<textarea>");
         $("body").append(tempElement);
         tempElement.val(texto).select();
@@ -129,56 +132,80 @@
         tempElement.remove();
         console.log("Texto copiado al portapapeles: " + texto);
       }
+
       $(".drag").click(function () {
-        // Obtener las coordenadas top y left de la pieza
         var top = $(this).css("top").replace("px", "");
         var left = $(this).css("left").replace("px", "");
-        // Formatear el texto con el formato requerido
         var textoCoordenadas = `_origeny="${top}" _origenx="${left}"`;
-
-        // Copiar al portapapeles
         copiarAlPortapapeles(textoCoordenadas);
       });
 
-      ///////////////// ⭐️ Anima las piezas ⭐️ ////////////////
+      ///////////////// ⭐️ Anima las piezas y verifica respuestas ⭐️ ////////////////
       function checkMatch() {
-        seleccionadas[dropActivo] = dragActivo;
-        console.log("seleccionadas", seleccionadas);
-        $("#pieza" + dragActivo).animate({
-          top: parseInt($("#drop" + dropActivo).attr("_origeny")) + 5,
-          left: parseInt($("#drop" + dropActivo).attr("_origenx")) + 5,
-        });
-        if (seleccionadas.indexOf(0) == -1) {
+        if (dropActivo >= 1 && dropActivo <= 3) {
+          seleccionadas1[dropActivo] = dragActivo;
+          console.log("seleccionadas1", seleccionadas1);
+          $("#pieza" + dragActivo).animate({
+            top: parseInt($("#drop" + dropActivo).attr("_origeny")) + 5,
+            left: parseInt($("#drop" + dropActivo).attr("_origenx")) + 5,
+          });
+        } else {
+          seleccionadas2[dropActivo] = dragActivo;
+          console.log("seleccionadas2", seleccionadas2);
+          $("#pieza" + dragActivo).animate({
+            top: parseInt($("#drop" + dropActivo).attr("_origeny")) + 5,
+            left: parseInt($("#drop" + dropActivo).attr("_origenx")) + 5,
+          });
+        }
+
+        // Verifica si ambos arrays están completos
+        if (seleccionadas1.indexOf(0) == -1 && seleccionadas2.indexOf(0) == -1) {
           validar();
         }
       }
 
+      ///////////////// ⭐️ Validar ambas respuestas ⭐️ ////////////////
       function validar() {
-        console.log("%c " + JSON.stringify(respuestas), "font-size: 100%; color: #00AEFF; font-weight: 700;");
-        console.log("%c " + JSON.stringify(seleccionadas), "font-size: 100%; color: #00AEFF; font-weight: 700;");
+        console.log("%c " + JSON.stringify(respuestas1), "font-size: 100%; color: #00AEFF; font-weight: 700;");
+        console.log("%c " + JSON.stringify(respuestas2), "font-size: 100%; color: #00AEFF; font-weight: 700;");
+        console.log("%c " + JSON.stringify(seleccionadas1), "font-size: 100%; color: #00AEFF; font-weight: 700;");
+        console.log("%c " + JSON.stringify(seleccionadas2), "font-size: 100%; color: #00AEFF; font-weight: 700;");
 
-        // Separar el valor fijo (3) y los valores que pueden estar en cualquier orden
-        var valoresFijos = [respuestas[5]]; // Solo el valor fijo (posición 5)
-        var valoresOrdenLibre = respuestas.slice(1, 5); // Valores que pueden cambiar de orden
-        var seleccionadosFijos = [seleccionadas[5]]; // Solo el valor fijo (posición 5)
-        var seleccionadosOrdenLibre = seleccionadas.slice(1, 5); // Valores seleccionados que pueden estar en cualquier orden
+        var respuestas1Validas = validarArray(respuestas1, seleccionadas1);
+        var respuestas2Validas = validarArray(respuestas2, seleccionadas2);
 
-        // Validar si el valor fijo está correcto y si los valores desordenados coinciden
-        if (JSON.stringify(valoresFijos) === JSON.stringify(seleccionadosFijos) && arraysIgualesSinOrden(valoresOrdenLibre, seleccionadosOrdenLibre)) {
+        if (respuestas1Validas && respuestas2Validas) {
           console.log("%c Bien", "font-size: 100%; color: #00ff22; font-weight: 700;");
           parent.enviarEnfrente();
-          entrada($("#retroBien"), "default", 0.5, 0.2);
+          entrada($("#retroBien2"), "default", 0.5, 0.2);
           entrada($("#cerrar"), "default", 0.5, 0.5);
           terminarPantalla();
         } else {
           console.log("%c Mal", "font-size: 100%; color: #ff001e; font-weight: 700;");
-          seleccionadas = [null, 0, 0, 0, 0, 0];
-          for (let A = 0; A <= respuestas.length + 1; A++) {
-            $("#pieza" + A).animate({
-              top: parseInt($("#pieza" + A).attr("_origeny")),
-              left: parseInt($("#pieza" + A).attr("_origenx")),
-            });
-          }
+          resetSeleccionadas();
+        }
+      }
+
+      function validarArray(respuestas, seleccionadas) {
+        var valoresFijos = [respuestas[respuestas.length - 1]];
+        var valoresOrdenLibre = respuestas.slice(1, respuestas.length - 1);
+        var seleccionadosFijos = [seleccionadas[seleccionadas.length - 1]];
+        var seleccionadosOrdenLibre = seleccionadas.slice(1, seleccionadas.length - 1);
+
+        return JSON.stringify(valoresFijos) === JSON.stringify(seleccionadosFijos) && arraysIgualesSinOrden(valoresOrdenLibre, seleccionadosOrdenLibre);
+      }
+
+      function resetSeleccionadas() {
+        seleccionadas1 = [null, 0, 0, 0];
+        seleccionadas2 = [null, null, null, null, 0, 0, 0, 0];
+        dropActivo = 0;
+        dragActivo = 0;
+        aprobado = false;
+        for (let i = 1; i <= 20; i++) {
+          $("#pieza" + i).animate({
+            top: parseInt($("#pieza" + i).attr("_origeny")),
+            left: parseInt($("#pieza" + i).attr("_origenx")),
+          });
         }
       }
 
