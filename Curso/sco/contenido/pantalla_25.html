@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/Animations.js"></script>
+    <script src="js/preCarga.js"></script>
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Pantalla 25</title>
+  </head>
+
+  <body>
+    <div id="contenido">
+      <img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla25/bg.png" />
+      <img id="imagen0" class="element" _origeny="0" _origenx="0" src="images/pantalla25/img04.png" />
+      <img id="logo" class="element" _origeny="0" _origenx="0" src="images/logo.png" />
+      <img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla25/img05.png" />
+
+      <!-- pregunta 1 -->
+      <img id="imagen2" class="element" _origeny="0" _origenx="0" src="images/pantalla25/img06.png" />
+      <img id="opcionA-1" Pregunta="1" Opcion="a" class="element btn" _origeny="300" _origenx="135" src="images/pantalla25/btn01.png" />
+      <img id="opcionB-1" Pregunta="1" Opcion="b" class="element btn" _origeny="420" _origenx="135" src="images/pantalla25/btn02.png" />
+      <img id="opcionC-1" Pregunta="1" Opcion="c" class="element btn" _origeny="540" _origenx="135" src="images/pantalla25/btn03.png" />
+
+      <!-- pregunta 2 -->
+      <img id="imagen3" class="element" _origeny="0" _origenx="0" src="images/pantalla25/img07.png" />
+      <img id="opcionA-2" Pregunta="2" Opcion="a" class="element btn" _origeny="300" _origenx="135" src="images/pantalla25/btn04.png" />
+      <img id="opcionB-2" Pregunta="2" Opcion="b" class="element btn" _origeny="420" _origenx="135" src="images/pantalla25/btn05.png" />
+      <img id="opcionC-2" Pregunta="2" Opcion="c" class="element btn" _origeny="540" _origenx="135" src="images/pantalla25/btn06.png" />
+
+      <!-- pregunta 3 -->
+      <img id="imagen4" class="element" _origeny="0" _origenx="0" src="images/pantalla25/img08.png" />
+      <img id="opcionA-3" Pregunta="3" Opcion="a" class="element btn" _origeny="300" _origenx="135" src="images/pantalla25/btn07.png" />
+      <img id="opcionB-3" Pregunta="3" Opcion="b" class="element btn" _origeny="420" _origenx="135" src="images/pantalla25/btn08.png" />
+      <img id="opcionC-3" Pregunta="3" Opcion="c" class="element btn" _origeny="540" _origenx="135" src="images/pantalla25/btn09.png" />
+
+      <!-- pregunta 4 -->
+      <img id="imagen5" class="element" _origeny="0" _origenx="0" src="images/pantalla25/img09.png" />
+      <img id="opcionA-4" Pregunta="4" Opcion="a" class="element btn" _origeny="300" _origenx="135" src="images/pantalla25/btn10.png" />
+      <img id="opcionB-4" Pregunta="4" Opcion="b" class="element btn" _origeny="420" _origenx="135" src="images/pantalla25/btn11.png" />
+      <img id="opcionC-4" Pregunta="4" Opcion="c" class="element btn" _origeny="540" _origenx="135" src="images/pantalla25/btn12.png" />
+
+      <!-- pregunta 5 -->
+      <img id="imagen6" class="element" _origeny="0" _origenx="0" src="images/pantalla25/img10.png" />
+      <img id="opcionA-5" Pregunta="5" Opcion="a" class="element btn" _origeny="300" _origenx="135" src="images/pantalla25/btn13.png" />
+      <img id="opcionB-5" Pregunta="5" Opcion="b" class="element btn" _origeny="420" _origenx="135" src="images/pantalla25/btn14.png" />
+      <img id="opcionC-5" Pregunta="5" Opcion="c" class="element btn" _origeny="540" _origenx="135" src="images/pantalla25/btn15.png" />
+
+      <!-- retros -->
+      <img id="retroFallo" class="element" _origeny="0" _origenx="0" src="images/pantalla25/retro_mal.png" />
+      <img id="retroAcerto" class="element" _origeny="0" _origenx="0" src="images/pantalla25/retro_bien.png" />
+      <img id="retroFinalBien" class="element" _origeny="0" _origenx="0" src="images/pantalla25/retrofinal_positiva.png" />
+      <img id="retroFinalMal" class="element" _origeny="0" _origenx="0" src="images/pantalla25/retrofinal_negativa.png" />
+
+      <!-- numeros -->
+      <img id="num1" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/01.png" />
+      <img id="num2" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/02.png" />
+      <img id="num3" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/03.png" />
+      <img id="num4" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/04.png" />
+      <img id="num5" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/05.png" />
+      <img id="num6" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/06.png" />
+      <img id="num7" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/07.png" />
+      <img id="num8" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/08.png" />
+      <img id="num9" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/09.png" />
+      <img id="num10" class="element" _origeny="373" _origenx="659" src="images/pantalla25/numeros-calificacion/10.png" />
+      <img id="num10Final" class="element" _origeny="373" _origenx="892" src="images/pantalla25/numeros-calificacion/05.png" />
+
+      <!-- botones -->
+      <img id="btnCerrarRetro" class="element btn" _origeny="165" _origenx="935" src="images/pantalla25/cerrar.png" />
+      <img id="btnCerrar" class="element btn" _origeny="652" _origenx="905" src="images/pantalla25/btn17.png" />
+      <img id="btnReintentar" class="element btn" _origeny="652" _origenx="905" src="images/pantalla25/btn18.png" />
+      <img id="btnContinuar" class="element btn" _origeny="652" _origenx="905" src="images/pantalla25/btn19.png" />
+
+      <!-- cargador -->
+      <img id="cargando" class="cargando" src="images/cargando.gif" />
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      let F = function muestraContenido() {
+        let pregunta = 1;
+        let intentos = parseInt(localStorage.getItem("intentos")) || 0;
+        let puntos = 0;
+        let termino = false;
+        const respuestas = ["a", "a", "a", "a", "a"];
+        entrada($("#fondo"), "default", 0.5, 0);
+        entrada($("#logo"), "default", 0.5, 0);
+        entrada($("#imagen0"), "default", 0.5, 0);
+        entrada($("#imagen1"), "default", 0.5, 0.2);
+        lanzarPregunta(pregunta);
+
+        // Pregunta 1 clic
+        $("#opcionA-1,#opcionB-1,#opcionC-1,#opcionD-1").click(function () {
+          const valorPregunta = parseInt($(this).attr("Pregunta"));
+          const opcion = $(this).attr("Opcion");
+
+          console.log(respuestas[valorPregunta - 1]);
+          console.log(opcion);
+
+          if (respuestas[valorPregunta - 1] === opcion) {
+            puntos++;
+            entrada($("#retroAcerto"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          } else {
+            entrada($("#retroFallo"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          }
+          pregunta++;
+          // lanzarPregunta(pregunta);
+        });
+
+        // Pregunta 2 clic
+        $("#opcionA-2,#opcionB-2,#opcionC-2,#opcionD-2").click(function () {
+          const valorPregunta = parseInt($(this).attr("Pregunta"));
+          const opcion = $(this).attr("Opcion");
+
+          if (respuestas[valorPregunta - 1] === opcion) {
+            puntos++;
+            entrada($("#retroAcerto"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          } else {
+            entrada($("#retroFallo"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          }
+          pregunta++;
+          // lanzarPregunta(pregunta);
+        });
+
+        // Pregunta 3 clic
+        $("#opcionA-3,#opcionB-3,#opcionC-3,#opcionD-3").click(function () {
+          const valorPregunta = parseInt($(this).attr("Pregunta"));
+          const opcion = $(this).attr("Opcion");
+
+          if (respuestas[valorPregunta - 1] === opcion) {
+            puntos++;
+            entrada($("#retroAcerto"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          } else {
+            entrada($("#retroFallo"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          }
+          pregunta++;
+          // lanzarPregunta(pregunta);
+        });
+
+        // Pregunta 4 clic
+        $("#opcionA-4,#opcionB-4,#opcionC-4,#opcionD-4").click(function () {
+          const valorPregunta = parseInt($(this).attr("Pregunta"));
+          const opcion = $(this).attr("Opcion");
+
+          if (respuestas[valorPregunta - 1] === opcion) {
+            puntos++;
+            entrada($("#retroAcerto"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          } else {
+            entrada($("#retroFallo"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          }
+          pregunta++;
+          // lanzarPregunta(pregunta);
+        });
+
+        // Pregunta 5 clic
+        $("#opcionA-5,#opcionB-5,#opcionC-5,#opcionD-5").click(function () {
+          const valorPregunta = parseInt($(this).attr("Pregunta"));
+          const opcion = $(this).attr("Opcion");
+
+          if (respuestas[valorPregunta - 1] === opcion) {
+            puntos++;
+            entrada($("#retroAcerto"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          } else {
+            entrada($("#retroFallo"), "default", 0.5, 0.2);
+            entrada($("#btnCerrarRetro"), "default", 0.5, 0.2);
+          }
+          termino = true;
+        });
+
+        function lanzarPregunta(pregunta) {
+          limpiar();
+          switch (pregunta) {
+            case 1:
+              entrada($("#imagen2"), "arriba", 0.5, 0.2);
+              entrada($("#opcionA-1"), "zoom", 0.5, 0.4);
+              entrada($("#opcionB-1"), "zoom", 0.5, 0.6);
+              entrada($("#opcionC-1"), "zoom", 0.5, 0.8);
+              entrada($("#opcionD-1"), "zoom", 0.5, 1);
+
+              break;
+            case 2:
+              entrada($("#imagen3"), "arriba", 0.5, 0.2);
+              entrada($("#opcionA-2"), "zoom", 0.5, 0.4);
+              entrada($("#opcionB-2"), "zoom", 0.5, 0.6);
+              entrada($("#opcionC-2"), "zoom", 0.5, 0.8);
+              entrada($("#opcionD-2"), "zoom", 0.5, 1);
+              break;
+            case 3:
+              entrada($("#imagen4"), "arriba", 0.5, 0.2);
+              entrada($("#opcionA-3"), "zoom", 0.5, 0.4);
+              entrada($("#opcionB-3"), "zoom", 0.5, 0.6);
+              entrada($("#opcionC-3"), "zoom", 0.5, 0.8);
+              entrada($("#opcionD-3"), "zoom", 0.5, 1);
+              break;
+            case 4:
+              entrada($("#imagen5"), "arriba", 0.5, 0.2);
+              entrada($("#opcionA-4"), "zoom", 0.5, 0.4);
+              entrada($("#opcionB-4"), "zoom", 0.5, 0.6);
+              entrada($("#opcionC-4"), "zoom", 0.5, 0.8);
+              entrada($("#opcionD-4"), "zoom", 0.5, 1);
+              break;
+            case 5:
+              entrada($("#imagen6"), "arriba", 0.5, 0.2);
+              entrada($("#opcionA-5"), "zoom", 0.5, 0.4);
+              entrada($("#opcionB-5"), "zoom", 0.5, 0.6);
+              entrada($("#opcionC-5"), "zoom", 0.5, 0.8);
+              entrada($("#opcionD-5"), "zoom", 0.5, 1);
+              break;
+            default:
+              break;
+          }
+        }
+
+        function limpiar() {
+          for (let index = 2; index < 11; index++) {
+            salida($("#imagen" + index), "default", 0, 0);
+          }
+
+          for (let index = 1; index < 11; index++) {
+            salida($("#opcionA-" + index), "default", 0, 0);
+            salida($("#opcionB-" + index), "default", 0, 0);
+            salida($("#opcionC-" + index), "default", 0, 0);
+            salida($("#opcionD-" + index), "default", 0, 0);
+          }
+        }
+
+        function validar() {
+          if (puntos >= 4) {
+            entrada($("#retroFinalBien"), "default", 0.5, 0.2);
+            entrada($("#num10Final"), "default", 0.5, 0.4);
+            cualCalif(puntos);
+            entrada($("#btnCerrar"), "default", 0.5, 0.8);
+          } else {
+            entrada($("#retroFinalMal"), "default", 0.5, 0.2);
+            entrada($("#num10Final"), "default", 0.5, 0.4);
+            cualCalif(puntos);
+            entrada($("#btnReintentar"), "default", 0.5, 0.8);
+          }
+        }
+
+        $("#btnCerrarRetro").click(function () {
+          salida($("#btnCerrarRetro"), "default", 0, 0);
+          salida($("#retroAcerto"), "default", 0, 0);
+          salida($("#retroFallo"), "default", 0, 0);
+          console.log("pregunta: " + pregunta);
+          if (termino === false) {
+            lanzarPregunta(pregunta);
+          } else {
+            validar();
+          }
+        });
+
+        $("#btnCerrar").click(function () {
+        //   alert("Cierra la ventana para terminar la evaluación...");
+          parent.set("cmi.core.score.raw", puntos);
+          parent.complete();
+          parent.save();
+          setTimeout(() => {
+            parent.nextPage();
+          }, 500);
+        });
+
+        $("#btnReintentar").click(function () {
+          if (intentos < 3) {
+            intentos = intentos + 1;
+            localStorage.setItem("intentos", intentos);
+            setTimeout(function () {
+              parent.reLoad();
+            }, 500);
+          } else {
+            parent.set("cmi.core.score.raw", puntos);
+            parent.complete();
+            parent.save();
+            setTimeout(() => {
+              parent.nextPage();
+            }, 500);
+          }
+        });
+
+        function cualCalif(puntos) {
+          switch (puntos) {
+            case 1:
+              entrada($("#num1"), "default", 0.5, 0.6);
+              break;
+            case 2:
+              entrada($("#num2"), "default", 0.5, 0.6);
+              break;
+            case 3:
+              entrada($("#num3"), "default", 0.5, 0.6);
+              break;
+            case 4:
+              entrada($("#num4"), "default", 0.5, 0.6);
+              break;
+            case 5:
+              entrada($("#num5"), "default", 0.5, 0.6);
+              break;
+            case 6:
+              entrada($("#num6"), "default", 0.5, 0.6);
+              break;
+            case 7:
+              entrada($("#num7"), "default", 0.5, 0.6);
+              break;
+            case 8:
+              entrada($("#num8"), "default", 0.5, 0.6);
+              break;
+            case 9:
+              entrada($("#num9"), "default", 0.5, 0.6);
+              break;
+            case 10:
+              entrada($("#num10"), "default", 0.5, 0.6);
+              break;
+
+            default:
+              break;
+          }
+        }
+      };
+
+      preload(document.title, F);
+    }); //ready
+  </script>
+</html>

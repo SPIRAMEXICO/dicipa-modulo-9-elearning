@@ -24,8 +24,12 @@
       <img id="fondo" class="element" _origeny="0" _origenx="0" src="images/pantalla24/bg.png" />
       <img id="imagen1" class="element" _origeny="0" _origenx="0" src="images/pantalla24/img01.png" />
       <img id="imagen2" class="element" _origeny="0" _origenx="0" src="images/pantalla24/img02.png" />
+      <img id="imagen3" class="element" _origeny="0" _origenx="0" src="images/pantalla24/img03.png" />
+      <img id="imagen4" class="element" _origeny="0" _origenx="0" src="images/pantalla24/img04.png" />
 
-      <img id='btn1' class='element btn' _origeny='200' _origenx='200' src='images/pantalla24/btn01.png' />
+      <img id="mano" class="element mano" _origeny="660" _origenx="380" src="images/mano.png" />
+      <!-- <img id="btn1" class="element btn" _origeny="630" _origenx="450" src="images/pantalla24/btn01.png" /> -->
+      <img id="btn1" class="element btn" _origeny="630" _origenx="430" src="images/pantalla24/btn01.png" />
 
       <!-- cargador -->
       <img id="cargando" class="cargando" src="images/cargando.gif" />
@@ -33,7 +37,7 @@
   </body>
   <script>
     $(document).ready(function () {
-    //-> ANIMACIONES: // default // arriba // abajo // izq // der // zoom // alejar // speedIzq // speedDer // flip // sheker1 ←..→ // sheker2 ↩︎ // sheker3 ↑..↓ // sheker4 ←→ 
+      //-> ANIMACIONES: // default // arriba // abajo // izq // der // zoom // alejar // speedIzq // speedDer // flip // sheker1 ←..→ // sheker2 ↩︎ // sheker3 ↑..↓ // sheker4 ←→
       let F = function muestraContenido() {
         entrada($("#bg"), "default", 0);
         entrada($("#fondo"), "default", 0, 0);
@@ -42,9 +46,24 @@
 
         parent.reproducir("24_1", 0.2);
         parent.Audios["24_1"].once("end", function (e) {
-          parent.reproducir("24_2", 0);
+          parent.reproducir("24_2", 0.3);
+          entrada($("#imagen3"), "default", 0.5, 0);
         });
-      }
+        parent.Audios["24_2"].once("end", function (e) {
+          entrada($("#imagen4"), "default", 0.5, 0);
+          parpadea($('#btn1'), 0.2);
+          // entrada($("#btn1"), "default", 0.5, 0.2);
+          // entrada($("#mano"), "sheker2", 0.5, 0.4);
+        });
+      };
+
+      $("#btn1")
+        .off()
+        .click(function () {
+          stop($(this), 0);
+          salida($(this), "default", 0);
+          parent.nextPage();
+        });
 
       preload(document.title, F);
     }); //ready
