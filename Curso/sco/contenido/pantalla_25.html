@@ -269,8 +269,27 @@
         });
 
         $("#btnCerrar").click(function () {
-        //   alert("Cierra la ventana para terminar la evaluación...");
-          parent.set("cmi.core.score.raw", puntos);
+          //   alert("Cierra la ventana para terminar la evaluación...");
+          let calif = 0;
+          if (puntos == 5) {
+            calif = 100;
+          }
+          if (puntos == 4) {
+            calif = 80;
+          }
+          if (puntos == 3) {
+            calif = 60;
+          }
+          if (puntos == 2) {
+            calif = 40;
+          }
+          if (puntos == 1) {
+            calif = 20;
+          }
+          if (puntos == 0) {
+            calif = 0;
+          }
+          parent.set("cmi.core.score.raw", calif);
           parent.complete();
           parent.save();
           setTimeout(() => {
@@ -279,6 +298,25 @@
         });
 
         $("#btnReintentar").click(function () {
+          let calif = 0;
+          if (puntos == 5) {
+            calif = 100;
+          }
+          if (puntos == 4) {
+            calif = 80;
+          }
+          if (puntos == 3) {
+            calif = 60;
+          }
+          if (puntos == 2) {
+            calif = 40;
+          }
+          if (puntos == 1) {
+            calif = 20;
+          }
+          if (puntos == 0) {
+            calif = 0;
+          }
           if (intentos < 3) {
             intentos = intentos + 1;
             localStorage.setItem("intentos", intentos);
@@ -286,7 +324,7 @@
               parent.reLoad();
             }, 500);
           } else {
-            parent.set("cmi.core.score.raw", puntos);
+            parent.set("cmi.core.score.raw", calif);
             parent.complete();
             parent.save();
             setTimeout(() => {
